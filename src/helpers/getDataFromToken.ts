@@ -10,6 +10,6 @@ export async function getDataFromToken(request: NextRequest) {
     );
     return decodedToken.id;
   } catch (error: any) {
-    console.log("getDataFromToken -", error.message);
+    throw new Error(error.message);
   }
 }
